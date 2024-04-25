@@ -3,12 +3,13 @@
  1 Obter o numero de telefone de um usuario a partir de seu Id
  2 Obter o endereco do usuario pelo Id 
 */
+
 // importamos um módulo interno do node.js
 const util = require('util')
 const obterEnderecoAsync = util.promisify(obterEndereco)
 
 function obterUsuario() {
-    // quando der algum problea -> reject(ERRO)
+    // quando der algum problema -> reject(ERRO)
     // quando sucess -> RESOLV
     return new Promise(function resolvePromise(resolve, reject) {
         setTimeout(function () {
@@ -45,7 +46,7 @@ function obterEndereco(idUsuario, callback) {
     }, 2000);
 }
 
-// 1o passso adicionar a palavra async -> automaticamente ela retornará uma Promise
+// 1° passso adicionar a palavra async -> automaticamente ela retornará uma Promise
 main()
 async function main() {
     try {
