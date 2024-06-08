@@ -59,6 +59,22 @@ class Database {
         data.splice(index, 1);
         return await this.writeFiles(data);
     }
+
+    async update(id, updates) {
+        const data =  await this.getDataFile();
+        const index = data.findIndex(item => item.id === parseInt(id));
+        if (index === -1) {
+            throw Error("Heroi não existe!");
+        }
+
+        const actual = data[index];
+        data.splice(index, 1);
+
+        const UpdateObj = JSON.parse(JSON.stringfy(updates));
+        const UpdateData = Object.assing({}, actual, UpdateObj);
+
+        return await this.writeFiles([...data, UpdateData]);
+    }
 }
 
 module.exports = new Database();
