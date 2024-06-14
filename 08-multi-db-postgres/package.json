@@ -1,10 +1,15 @@
 {
-  "dependencies": {
-    "pg": "^8.12.0",
-    "pg-hstore": "^2.3.4",
-    "sequelize": "^6.37.3"
-  },
-  "devDependencies": {
-    "mocha": "^10.4.0"
-  }
+	"main": "index.js",
+	"scripts": {
+		"test":"mocha src/tests/*.js",
+		"test-watch":"mocha -w src/tests/*.js"
+	},
+	"dependencies": {
+		"pg": "^8.12.0",
+		"pg-hstore": "^2.3.4",
+		"sequelize": "^6.37.3"
+	},
+	"devDependencies": {
+		"mocha": "^10.4.0"
+	}
 }
